@@ -9,6 +9,7 @@ import com.example.ardemo.R
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.HitResult
 import com.google.ar.core.Plane
+import com.google.ar.core.Session
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
@@ -29,6 +30,7 @@ class arActivity : AppCompatActivity() {
         enableAR()
 
     }
+
 
     //Plaszczyzna
     fun enableAR() {  //w BigRepie jest ModelEnum jako argument, tutaj moge dodac filmik <?>
@@ -64,6 +66,7 @@ class arActivity : AppCompatActivity() {
                // printer?.renderable = printerRenderable //to raczej nie potrzebne, tylko MovieRenderable potrzebne
                 printer?.select()
                 //TODO:tworzenie sceny/wyświetlanie filmu na scenie<?>
+
                 //printer?.
             }
         } else { // Unsupported or unknown.
