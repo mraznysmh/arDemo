@@ -92,7 +92,6 @@ class arActivity : ArFragment() {
             }
         }
     }
-
     //Plaszczyzna
 //    fun enableAR() {  //w BigRepie jest ModelEnum jako argument, tutaj moge dodac filmik <?>
 //        val check = ArCoreApk.getInstance().checkAvailability(this)
