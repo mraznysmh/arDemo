@@ -1,10 +1,11 @@
 package com.example.ardemo.view
 
 import android.app.Fragment
-import android.app.FragmentManager
-import android.app.FragmentTransaction
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
+import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
 
-    val fragment: ArFragment?=null
-    val fm: FragmentManager=getFragmentManager()
+    var fragment: ArFragment?=null
+    val fm: FragmentManager=getSupportFragmentManager()
     val transaction:FragmentTransaction=fm.beginTransaction()
 
 
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        fragment=arActivity()
+        transaction.add(R.id.fragmentContainer, fragment)
+        transaction.commit()
 
         val cameraButton: Button = findViewById(R.id.cameraButton)
 
@@ -38,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 //            val arView= Intent(this, arActivity::class.java)
 //            startActivity(arView)
         }
-        supportFragmentManager.inTransaction{
-            replace(R.id.fragmentContainer, arActivity())
-        }
+//        supportFragmentManager.inTransaction{
+//            replace(R.id.fragmentContainer, arActivity())
+//        }
 //        transaction.replace(R.id.fragmentContainer,fragment)
 //        transaction.commit()
 

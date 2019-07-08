@@ -11,5 +11,8 @@
             android:layout_height="match_parent"
             android:text="@string/hello_blank_fragment"/>
 
-
+    <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
+              android:id="@+id/ux_fragment"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" />
 </FrameLayout>

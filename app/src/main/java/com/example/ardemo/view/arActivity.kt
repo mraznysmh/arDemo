@@ -1,5 +1,6 @@
 package com.example.ardemo.view
 
+import android.app.Fragment
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
@@ -19,6 +20,9 @@ import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import java.io.IOException
+import com.google.ar.core.AugmentedImageDatabase
+
+
 
 class arActivity : ArFragment() {
     //private var arFragment: ArFragment? = null
@@ -50,7 +54,7 @@ class arActivity : ArFragment() {
         fun setupAugmentedImageDatabase(config: Config, session: Session): Boolean {
             try {
                 config.augmentedImageDatabase = AugmentedImageDatabase(session).also { db ->
-                    db.addImage(VIDEO1, loadAugmentedImageBitmap(IMG1))
+                    db.addImage(VIDEO1, loadAugmentedImageBitmap(IMG4))
 //                db.addImage(TEST_VIDEO_2, loadAugmentedImageBitmap(TEST_IMAGE_2))
 //                db.addImage(TEST_VIDEO_3, loadAugmentedImageBitmap(TEST_IMAGE_3))
                 }
@@ -138,8 +142,11 @@ class arActivity : ArFragment() {
     companion object{
         private const val TAG="arActivity"
 
-        private const val IMG1="black-square.jpg" //TODO obrazek jakis
-        private const val VIDEO1="chicken.mp4" //TODO z downloadsow
+        private const val IMG1="blacksquare.jpg"
+        private const val IMG2="podladka.jpeg"
+        private const val IMG3="traffic.jpg"
+        private const val IMG4="highreso.jpg"
+        private const val VIDEO1="chicken.mp4"
     }
 
 }
