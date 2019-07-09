@@ -6,20 +6,22 @@ import android.support.v4.app.FragmentTransaction
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.databinding.DataBindingUtil
+import android.opengl.GLSurfaceView
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.ardemo.R
 import com.example.ardemo.viewModel.MainViewModel
 import com.google.ar.sceneform.ux.ArFragment
+import javax.microedition.khronos.opengles.GL10
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     private val viewModel by lazy {
         ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
 
-    var fragment: ArFragment?=null
-    val fm: FragmentManager=getSupportFragmentManager()
+    val fragment: ArFragment?=arActivity()
+    val fm: FragmentManager= supportFragmentManager
     val transaction:FragmentTransaction=fm.beginTransaction()
 
 
@@ -32,16 +34,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragment=arActivity()
+        //fragment=arActivity()
         transaction.add(R.id.fragmentContainer, fragment)
         transaction.commit()
 
-        val cameraButton: Button = findViewById(R.id.cameraButton)
-
-        cameraButton.setOnClickListener {
-//            val arView= Intent(this, arActivity::class.java)
-//            startActivity(arView)
-        }
 //        supportFragmentManager.inTransaction{
 //            replace(R.id.fragmentContainer, arActivity())
 //        }
@@ -49,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 //        transaction.commit()
 
     }
+
 
     private inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
         beginTransaction().func().commit()

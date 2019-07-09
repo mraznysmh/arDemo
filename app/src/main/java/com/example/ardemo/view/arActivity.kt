@@ -28,7 +28,7 @@ class arActivity : ArFragment() {
     //private var arFragment: ArFragment? = null
     //var printer: TransformableNode? = null
     //private var printerRenderable: ModelRenderable? = null
-    //TODO: zapytac czy to obrazek ma łapać??
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,6 +43,7 @@ class arActivity : ArFragment() {
 
         return view
     }
+
 
     override fun getSessionConfiguration(session: Session): Config {
 
@@ -134,9 +135,7 @@ class arActivity : ArFragment() {
 //        }
 //    }
 //
-//    fun movieOnPlaneAR(){
-//
-//    }
+
     companion object{
         private const val TAG="arActivity"
 
