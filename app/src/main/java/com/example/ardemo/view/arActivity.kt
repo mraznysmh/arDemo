@@ -28,6 +28,7 @@ class arActivity : ArFragment() {
     //private var arFragment: ArFragment? = null
     //var printer: TransformableNode? = null
     //private var printerRenderable: ModelRenderable? = null
+    //TODO: zapytac czy to obrazek ma łapać??
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -54,7 +55,7 @@ class arActivity : ArFragment() {
         fun setupAugmentedImageDatabase(config: Config, session: Session): Boolean {
             try {
                 config.augmentedImageDatabase = AugmentedImageDatabase(session).also { db ->
-                    db.addImage(VIDEO1, loadAugmentedImageBitmap(IMG4))
+                    db.addImage(VIDEO1, loadAugmentedImageBitmap(IMG5))
 //                db.addImage(TEST_VIDEO_2, loadAugmentedImageBitmap(TEST_IMAGE_2))
 //                db.addImage(TEST_VIDEO_3, loadAugmentedImageBitmap(TEST_IMAGE_3))
                 }
@@ -125,8 +126,6 @@ class arActivity : ArFragment() {
 //                printer?.setParent(anchorNode)
 //               // printer?.renderable = printerRenderable //to raczej nie potrzebne, tylko MovieRenderable potrzebne
 //                printer?.select()
-//                //TODO:tworzenie sceny/wyświetlanie filmu na scenie<?>
-//
 //                //printer?.
 //            }
 //        } else { // Unsupported or unknown.
@@ -145,6 +144,7 @@ class arActivity : ArFragment() {
         private const val IMG2="podladka.jpeg"
         private const val IMG3="traffic.jpg"
         private const val IMG4="highreso.jpg"
+        private const val IMG5="zdjecieztela.jpg"
         private const val VIDEO1="chicken.mp4"
     }
 
