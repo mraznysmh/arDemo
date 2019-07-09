@@ -1,5 +1,24 @@
 package com.example.ardemo.renderer;
 
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.graphics.SurfaceTexture;
+import android.media.MediaPlayer;
+import android.opengl.GLES11Ext;
+import android.opengl.GLES20;
+import android.opengl.Matrix;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.view.Surface;
+import com.google.ar.core.Pose;
+
+import javax.microedition.khronos.opengles.GL10;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.ByteOrder;
+
 /**
  * Renders a movie clip with a green screen aware shader.
  * <p>
@@ -253,8 +272,7 @@ public class MovieClipRenderer implements
         }
     }
 
-    public boolean play(final String filename, Context context)
-            throws FileNotFoundException {
+    public boolean play(final String filename, Context context) {
         // Wait for the player to be created.
         if (player == null) {
             synchronized (lock) {

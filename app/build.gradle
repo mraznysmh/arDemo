@@ -63,4 +63,7 @@ dependencies {
     implementation "com.google.ar:core:$arcore_version"
     implementation "com.google.ar.sceneform:core:$arcore_version"
     implementation "com.google.ar.sceneform.ux:sceneform-ux:$arcore_version"
+
+    //javagl
+    compile group: 'de.javagl', name: 'obj', version: '0.2.1'
 }
