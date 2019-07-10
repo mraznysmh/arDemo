@@ -17,7 +17,9 @@ import com.google.ar.core.Pose;
 import javax.microedition.khronos.opengles.GL10;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 
 /**
  * Renders a movie clip with a green screen aware shader.

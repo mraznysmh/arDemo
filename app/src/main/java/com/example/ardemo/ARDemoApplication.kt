@@ -8,6 +8,6 @@ class ARDemoApplication: Application(){
 
     override fun onCreate(){
         super.onCreate()
-        Fabric.with(this,Crashlytics()) //spytac co to daje wlasciwie
+        Fabric.with(this,Crashlytics())
     }
 }

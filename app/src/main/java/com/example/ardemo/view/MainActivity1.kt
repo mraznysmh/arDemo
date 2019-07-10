@@ -15,7 +15,10 @@ import com.example.ardemo.viewModel.MainViewModel
 import com.google.ar.sceneform.ux.ArFragment
 import javax.microedition.khronos.opengles.GL10
 
-class MainActivity : AppCompatActivity(){
+class MainActivity1 : AppCompatActivity(){
+
+
+
     private val viewModel by lazy {
         ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
@@ -29,22 +32,19 @@ class MainActivity : AppCompatActivity(){
 //    FragmentTransaction transaction = fm.beginTransaction();
 //    transaction.replace(R.id.contentFragment, fragment);
 //    transaction.commit();
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        //fragment=arActivity()
-        transaction.add(R.id.fragmentContainer, fragment)
-        transaction.commit()
-
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_main)
+//
+//        //fragment=arActivity()
+//        transaction.add(R.id.fragmentContainer, fragment)
+//        transaction.commit()
 //        supportFragmentManager.inTransaction{
 //            replace(R.id.fragmentContainer, arActivity())
 //        }
 //        transaction.replace(R.id.fragmentContainer,fragment)
 //        transaction.commit()
-
-    }
+//    }
 
 
     private inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
